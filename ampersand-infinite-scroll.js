@@ -1,8 +1,7 @@
 /*$AMPERSAND_VERSION*/
-var extend = require('ampersand-class-extend');
 var View = require('ampersand-view');
 
-function InfiniteScrollClosure(view, options){	
+function InfiniteScrollClosure(options){	
 	var def = {
 		reverse: false,
 		threshold: 20,
@@ -11,25 +10,28 @@ function InfiniteScrollClosure(view, options){
 		}
 	};
 	options || (options = {});
-	var el = (options.el || view.el);
 	var reverse = (options.reverse || def.reverse);
 	var threshold = (options.threshold || def.threshold);
 	var fetch = (options.fetch || def.fetch);
 
-	view.events['scroll ' + options.el] = infiniteScrollCb;
+	this.events.scroll = 'infiniteScroll';
 
-	function infiniteScrollCb(){
-		if(el.scrollHeight - el.scrollTop >= el.clientHeight - threshold){
+	this.infiniteScroll = function cb(){
+		if(this.el.scrollHeight - this.el.scrollTop >= this.el.clientHeight - threshold){
 			this.collection({data: fetch});
 		}
-	}
+	};
 }
 
-function InfiniteScrollView(options){
-	View.call(this, options);
+var InfiniteScrollView;
+
+InfiniteScrollView = function(options){
 	InfiniteScrollClosure.call(this, options.infiniteScroll);
-}
+	BaseView.call(this, options);
+};
 
-InfiniteScrollView.extend = extend;
+var BaseView = View.extend();
+InfiniteScrollView.prototype = Object.create(BaseView.prototype);
+InfiniteScrollView.extend = BaseView.extend;
 
-module.exports = InfiniteScrollView.extend(View);
+module.exports = InfiniteScrollView;
