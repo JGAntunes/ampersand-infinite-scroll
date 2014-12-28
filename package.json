@@ -26,6 +26,10 @@
     "url": "https://github.com/JGAntunes/ampersand-infinite-scroll/issues"
   },
   "homepage": "https://github.com/JGAntunes/ampersand-infinite-scroll",
+  "dependencies": {
+    "ampersand-class-extend": "^1.0.1",
+    "ampersand-view": "^7.2.0"
+  },
   "devDependencies": {
     "browserify": "^7.0.1",
     "jshint": "~2.5.10",
