@@ -3,7 +3,7 @@
 ampersand-infinite-scroll
 ============
 
-* This module is still under development *
+**_This module is still under development_**
 
 A simple ampersand module to be used with any view in need of an infinite scroll element. This module assumes that the collection associated with the view implemments a method `collection.fetchPage()` as so it is a perfect match to be used with [ampersand-pagination-mixin](https://github.com/JGAntunes/ampersand-pagination-mixin).
 
