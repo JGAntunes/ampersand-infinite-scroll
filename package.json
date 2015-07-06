@@ -1,11 +1,11 @@
 {
   "name": "ampersand-infinite-scroll",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "0.0.0",
   "main": "ampersand-infinite-scroll.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "node_modules/.bin/jshint -c .jshintrc ampersand-infinite-scroll.js"
+    "lint": "node_modules/.bin/semistandard"
   },
   "pre-commit": [
     "lint"
@@ -28,11 +28,12 @@
   "homepage": "https://github.com/JGAntunes/ampersand-infinite-scroll",
   "dependencies": {
     "ampersand-view": "^7.2.0",
+    "lodash.assign": "^3.2.0",
     "underscore": "^1.7.0"
   },
   "devDependencies": {
     "browserify": "^7.0.1",
-    "jshint": "~2.5.10",
+    "semistandard": "^6.1.2",
     "pre-commit": "https://github.com/jgantunes/pre-commit/tarball/master",
     "tap-spec": "^2.1.2",
     "tape": "^3.0.3",

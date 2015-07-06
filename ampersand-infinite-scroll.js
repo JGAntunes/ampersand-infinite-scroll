@@ -1,35 +1,43 @@
-/*$AMPERSAND_VERSION*/
+/* $AMPERSAND_VERSION */
 var View = require('ampersand-view');
-var _ = require('underscore');
+var assign = require('lodash.assign');
 
-function InfiniteScrollClosure(options){	
-	var def = {
-		reverse: false,
-		gap: 20
-	};
-	options || (options = {});
-	var reverse = (options.reverse || def.reverse);
-	var gap = (options.gap || def.gap);
+/**
+ * Setup the closure function for the Infinite Scroll callback
+ *
+ * @param {Object}  options - the valid options are:
+ *                  .gap - the pixel margin to fire the request
+ */
+function InfiniteScrollSetup (options) {
+  options || (options = {});
+  var self = this;
+  var gap = (options.gap || 20); // defaults to 20
 
-	_.extend(this, {events: {scroll: 'infiniteScroll'}}); 
+  self.events = self.events || {};
+  assign(self.events, {scroll: 'infiniteScroll'});
 
-	this.infiniteScroll = function cb(){
-		if(this.el.scrollHeight - this.el.scrollTop <= this.el.clientHeight + gap){
-			this.collection.fetchPage();
-		}
-	};
+  self.infiniteScroll = function () {
+    if (this.el.scrollHeight - this.el.scrollTop <= this.el.clientHeight + gap) {
+      this.collection.fetchPage();
+    }
+  };
 }
 
-var InfiniteScrollView;
-
-InfiniteScrollView = function(options){
-	options || (options = {});
-	BaseView.call(this, options);
-	InfiniteScrollClosure.call(this, options);
-};
-
+// Correctly setup the prototype chain
 var BaseView = View.extend();
 InfiniteScrollView.prototype = Object.create(BaseView.prototype);
 InfiniteScrollView.extend = BaseView.extend;
 
-module.exports = InfiniteScrollView;
+/**
+ * Infinite Scroll View constructor
+ *
+ * @param {Object}  options - the valid options according to the `ampersand-view`
+ *                            and this module
+ */
+function InfiniteScrollView (options) {
+  options || (options = {});
+  BaseView.call(this, options);
+  InfiniteScrollSetup.call(this, options);
+}
+
+exports = module.exports = InfiniteScrollView;
