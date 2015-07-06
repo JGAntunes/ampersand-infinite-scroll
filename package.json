@@ -1,7 +1,7 @@
 {
   "name": "ampersand-infinite-scroll",
-  "version": "0.1.0",
-  "description": "0.0.0",
+  "version": "0.0.0",
+  "description": "Ampersand infinite scroll view",
   "main": "ampersand-infinite-scroll.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -27,16 +27,15 @@
   },
   "homepage": "https://github.com/JGAntunes/ampersand-infinite-scroll",
   "dependencies": {
-    "ampersand-view": "^7.2.0",
-    "lodash.assign": "^3.2.0",
-    "underscore": "^1.7.0"
+    "ampersand-view": "^8.0.0",
+    "lodash.assign": "^3.2.0"
   },
   "devDependencies": {
-    "browserify": "^7.0.1",
+    "browserify": "^10.2.4",
     "semistandard": "^6.1.2",
-    "pre-commit": "https://github.com/jgantunes/pre-commit/tarball/master",
-    "tap-spec": "^2.1.2",
-    "tape": "^3.0.3",
-    "tape-run": "^0.3.0"
+    "pre-commit": "^1.0.10",
+    "tap-spec": "^4.0.2",
+    "tape": "^4.0.0",
+    "tape-run": "^1.0.0"
   }
 }
