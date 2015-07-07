@@ -1,4 +1,6 @@
 [![js-semistandard-style](https://cdn.rawgit.com/flet/semistandard/master/badge.svg)](https://github.com/Flet/semistandard)
+[![Dependency Status](https://david-dm.org/jgantunes/ampersand-infinite-scroll.svg)](https://david-dm.org/jgantunes/ampersand-infinite-scroll)
+[![devDependency Status](https://david-dm.org/jgantunes/ampersand-infinite-scroll/dev-status.svg)](https://david-dm.org/jgantunes/ampersand-infinite-scroll#info=devDependencies)
 
 ampersand-infinite-scroll
 ============
