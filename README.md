@@ -32,12 +32,15 @@ Example:
   });
   
   // Extend it like you wold normally do
-  var myView = View.extend({
+  var MyView = View.extend({
     initialize: function () {
       console.log('My super awesome infinite scroll view');
     },
-    collection: new
+    collection: new SpecialCollection()
   });
+
+  // And it's ready to be used
+  var infiniteScrollView = new MyView();
 ```
 
 ## credits
