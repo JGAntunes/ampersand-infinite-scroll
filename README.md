@@ -37,3 +37,12 @@ Example:
     collection: new
   });
 ```
+
+## credits
+
+Created by [@JGAntunes](http://github.com/JGAntunes), with the support of [@SINFO](http://github.com/sinfo) and based on a series of Ampersand Modules.
+
+
+## license
+
+MIT
