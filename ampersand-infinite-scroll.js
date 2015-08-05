@@ -18,7 +18,7 @@ function InfiniteScrollSetup (options) {
 
   self.infiniteScroll = function () {
     if (this.el.scrollHeight - this.el.scrollTop <= this.el.clientHeight + gap) {
-      this.collection.fetchPage();
+      this.collection.fetchPage(options);
     }
   };
 }
